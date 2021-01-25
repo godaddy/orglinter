@@ -1,0 +1,21 @@
+[org]
+email = "fakeadmin@totallyfakedomain.org"
+isVerified = true
+login = "totallyfakeorg"
+name = "Totally Fake Org"
+requiresTwoFactorAuthentication = true
+twitterUsername = "TotallyFakeTwitter"
+websiteUrl = "https://totallyfakedomain.org/"
+
+[members]
+adent = "arthur_dent"
+fprefect = "ford_prefect"
+mandroid = "marvin_the_android"
+tmcmillan = ["trillian", "trillian_astra"]
+zbeeblebrox = "zaphod_beeblebrox"
+
+[[teams]]
+name = "Heart of Gold Crew"
+default_org_role = "ADMIN"
+privacy = "SECRET"
+members = ["mandroid", "tmcmillan", "zbeeblebrox"]

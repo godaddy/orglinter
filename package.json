@@ -1,0 +1,27 @@
+{
+  "name": "orglinter",
+  "version": "1.0.0",
+  "description": "Ensure proper membership list and config for GitHub orgs",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:godaddy/orglinter.git"
+  },
+  "author": "Joey Wilhelm <tarkatronic@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@octokit/graphql": "^4.5.8",
+    "@octokit/request": "^5.4.12",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-godaddy": "^4.0.1"
+  }
+}
