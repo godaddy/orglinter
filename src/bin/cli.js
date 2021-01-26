@@ -40,7 +40,7 @@ const loaders = require('../lib/loaders');
       Object.keys(config['github-members']),
       Object.keys(organization.members)
     ).map((username) =>
-      fixers.inviteUser(username, orgName, config['github-members'][username].toLowerCase(), GITHUB_TOKEN, DRY_RUN)
+      fixers.inviteUser(username, orgName, GITHUB_TOKEN, config['github-members'][username].toLowerCase(), DRY_RUN)
     )
   );
   // Remove admin status from those who should not have it
