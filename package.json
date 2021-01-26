@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git@github.com:godaddy/orglinter.git"
   },
-  "author": "Joey Wilhelm <tarkatronic@gmail.com>",
+  "author": "GoDaddy Operating Company, LLC",
+  "maintainers": [
+    "Joey Wilhelm <tarkatronic@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "@iarna/toml": "^2.2.5",
