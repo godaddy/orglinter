@@ -2,7 +2,6 @@
   "name": "orglinter",
   "version": "1.0.0",
   "description": "Ensure proper membership list and config for GitHub orgs",
-  "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "start": "./src/bin/cli.js",
