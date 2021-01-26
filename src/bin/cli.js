@@ -23,7 +23,7 @@ const loaders = require('../lib/loaders');
     pendingActions.push(
       ...checkers.validateTwoFactor(
         organization.members
-      ).map((username) => fixers.removeMember(username, orgName, GITHUB_TOKEN, DRY_RUN))
+      ).map((username) => fixers.removeMember({ username, organization: orgName, token: GITHUB_TOKEN, dryRun: DRY_RUN }))
     );
   }
 
@@ -32,7 +32,7 @@ const loaders = require('../lib/loaders');
     ...checkers.findUndocumentedMembers(
       Object.keys(config['github-members']),
       Object.keys(organization.members)
-    ).map((username) => fixers.removeMember(username, orgName, GITHUB_TOKEN, DRY_RUN))
+    ).map((username) => fixers.removeMember({ username, organization: orgName, token: GITHUB_TOKEN, dryRun: DRY_RUN }))
   );
   // Invite members who are not present
   pendingActions.push(
@@ -40,7 +40,13 @@ const loaders = require('../lib/loaders');
       Object.keys(config['github-members']),
       Object.keys(organization.members)
     ).map((username) =>
-      fixers.inviteUser(username, orgName, GITHUB_TOKEN, config['github-members'][username].toLowerCase(), DRY_RUN)
+      fixers.inviteUser({
+        username,
+        organization: orgName,
+        token: GITHUB_TOKEN,
+        role: config['github-members'][username].toLowerCase(),
+        dryRun: DRY_RUN
+      })
     )
   );
   // Remove admin status from those who should not have it
@@ -48,14 +54,14 @@ const loaders = require('../lib/loaders');
     ...checkers.findDemotions(
       config['github-members'],
       organization.members
-    ).map((username) => fixers.demoteMember(username, orgName, GITHUB_TOKEN, DRY_RUN))
+    ).map((username) => fixers.demoteMember({ username, organization: orgName, token: GITHUB_TOKEN, dryRun: DRY_RUN }))
   );
   // Grant admin status to those who should have it
   pendingActions.push(
     ...checkers.findPromotions(
       config['github-members'],
       organization.members
-    ).map((username) => fixers.promoteMember(username, orgName, GITHUB_TOKEN, DRY_RUN))
+    ).map((username) => fixers.promoteMember({ username, organization: orgName, token: GITHUB_TOKEN, dryRun: DRY_RUN }))
   );
   await Promise.all(pendingActions);
   console.log(`${pendingActions.length} actions completed successfully!`);

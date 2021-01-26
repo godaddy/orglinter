@@ -1,7 +1,7 @@
 /* eslint-disable no-console, max-params */
 const { request } = require('@octokit/request');
 
-async function inviteUser(username, organization, token, role = 'member', dryRun = false) {
+async function inviteUser({ username, organization, token, role = 'member', dryRun = false }) {
   console.log(`Setting ${username} up as a(n) ${role} for ${organization}.`);
   if (dryRun) return;
   // Do the thing!
@@ -20,7 +20,7 @@ async function inviteUser(username, organization, token, role = 'member', dryRun
   }
 }
 
-async function removeMember(username, organization, token, dryRun = false) {
+async function removeMember({ username, organization, token, dryRun = false }) {
   console.log(`Removing ${username} from ${organization}.`);
   if (dryRun === true) return;
   // Do the thing!
@@ -38,18 +38,18 @@ async function removeMember(username, organization, token, dryRun = false) {
   }
 }
 
-async function promoteMember(username, organization, token, dryRun = false) {
+async function promoteMember({ username, organization, token, dryRun = false }) {
   console.log(`Promoting ${username} to admin in ${organization}.`);
   if (dryRun) return;
   // Do the thing!
-  await inviteUser(username, organization, token, 'admin');
+  await inviteUser({ username, organization, token, role: 'admin' });
 }
 
-async function demoteMember(username, organization, token, dryRun = false) {
+async function demoteMember({ username, organization, token, dryRun = false }) {
   console.log(`Demoting ${username} to member in ${organization}.`);
   if (dryRun) return;
   // Do the thing!
-  await inviteUser(username, organization, token, 'member');
+  await inviteUser({ username, organization, token, role: 'member' });
 }
 
 module.exports = { inviteUser, removeMember, promoteMember, demoteMember };
