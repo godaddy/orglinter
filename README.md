@@ -80,8 +80,8 @@ can also specify a different filename on the command line such as:
 ```console
 $ npm start my-org-file.toml
 
-> github_membership@1.0.0 start
-> node index.js
+> orglinter@1.0.0 start
+> node ./src/bin/cli.js
 # ...
 ```
 
