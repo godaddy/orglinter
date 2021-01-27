@@ -32,7 +32,10 @@
   "keywords": [
     "github",
     "linting",
-    "organization-management"
+    "organization management",
+    "membership",
+    "users",
+    "synchronize"
   ],
   "bugs": {
     "url": "https://github.com/godaddy/orglinter/issues"
