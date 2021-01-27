@@ -3,9 +3,9 @@
 
 require('dotenv').config();
 const path = require('path');
-const checkers = require('../lib/checkers');
-const fixers = require('../lib/fixers');
-const loaders = require('../lib/loaders');
+const checkers = require('../src/lib/checkers');
+const fixers = require('../src/lib/fixers');
+const loaders = require('../src/lib/loaders');
 
 (async () => {
   const DRY_RUN = !!process.env.DRY_RUN || false;

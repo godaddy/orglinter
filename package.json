@@ -4,7 +4,7 @@
   "description": "Ensure proper membership list and config for GitHub orgs",
   "scripts": {
     "lint": "eslint .",
-    "start": "./src/bin/cli.js",
+    "start": "./bin/cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,6 @@
     "eslint-config-godaddy": "^4.0.1"
   },
   "bin": {
-    "orglinter": "./src/bin/cli.js"
+    "orglinter": "./bin/cli.js"
   }
 }
