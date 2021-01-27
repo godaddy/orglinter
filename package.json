@@ -28,5 +28,17 @@
   },
   "bin": {
     "orglinter": "./bin/cli.js"
-  }
+  },
+  "keywords": [
+    "github",
+    "linting",
+    "organization-management"
+  ],
+  "bugs": {
+    "url": "https://github.com/godaddy/orglinter/issues"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ]
 }
