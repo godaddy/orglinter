@@ -1,10 +1,10 @@
 {
   "name": "orglinter",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Ensure proper membership list and config for GitHub orgs",
   "scripts": {
     "lint": "eslint .",
-    "start": "./src/bin/cli.js",
+    "start": "./bin/cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,24 @@
     "eslint-config-godaddy": "^4.0.1"
   },
   "bin": {
-    "orglinter": "./src/bin/cli.js"
+    "orglinter": "./bin/cli.js"
+  },
+  "keywords": [
+    "github",
+    "linting",
+    "organization management",
+    "membership",
+    "users",
+    "synchronize"
+  ],
+  "bugs": {
+    "url": "https://github.com/godaddy/orglinter/issues"
+  },
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "engines": {
+    "node": ">= 12.0.0"
   }
 }
