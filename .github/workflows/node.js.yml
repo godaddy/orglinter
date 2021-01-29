@@ -32,6 +32,6 @@ jobs:
         npm test
         npm run lint
     - name: Upload coverto Codecov
-      uses: codecov/codecov-actioino@v1
+      uses: codecov/codecov-action@v1
       with:
         file: coverage/cobertura-coverage.xml
