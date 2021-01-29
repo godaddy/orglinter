@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "./bin/cli.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,14 @@
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
+    "assume": "^2.3.0",
     "eslint": "^7.15.0",
-    "eslint-config-godaddy": "^4.0.1"
+    "eslint-config-godaddy": "^4.0.1",
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.4"
   },
   "bin": {
     "orglinter": "./bin/cli.js"
@@ -46,5 +52,21 @@
   ],
   "engines": {
     "node": ">= 12.0.0"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "cobertura",
+      "html",
+      "lcov",
+      "text"
+    ]
+  },
+  "mocha": {
+    "recursive": true,
+    "spec": "test/**/*.spec.js"
   }
 }
