@@ -117,6 +117,20 @@ does have the side effect that, if an internal username is connected to multiple
 GitHub usernames, as demonstrated above, all of those GitHub usernames will be
 made admins of the org.
 
+## Development
+
+### Running Tests
+
+This project uses [mocha], [assume], and [sinon] for its tests. It also uses
+[eslint] for ensuring code styling. Luckily, the execution of these tools is
+nicely automated for you. To run all of them, all you need to do is:
+
+```console
+$ npm test
+```
+
+This will run all of the tests for you, followed by the linter.
+
 ## Credits
 
 Originally developed internally for making easier work of the management of
@@ -125,8 +139,11 @@ Originally developed internally for making easier work of the management of
 * [Joey Wilhelm]
 * [Rick Markins]
 
-[TOML]: https://toml.io/
 [array of tables]: https://toml.io/en/v1.0.0#array-of-tables
+[assume]: http://assume.fail/
 [GoDaddy]: https://www.godaddy.com/
 [Joey Wilhelm]: https://github.com/tarkatronic/
+[mocha]: https://mochajs.org/
 [Rick Markins]: https://github.com/rxmarbles/
+[sinon]: https://sinonjs.org/
+[TOML]: https://toml.io/

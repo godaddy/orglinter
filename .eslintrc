@@ -1,4 +1,14 @@
 {
   "root": true,
-  "extends": "godaddy"
+  "extends": [
+    "godaddy",
+    "plugin:mocha/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-mocha",
+    "eslint-plugin-node"
+  ],
+  "env": {
+    "node": true
+  }
 }
