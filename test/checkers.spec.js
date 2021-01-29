@@ -10,7 +10,7 @@ describe('Checkers', function () {
   });
 
   after(function () {
-    console.log.restore();
+    sinon.restore();
   });
 
   describe('findUndocumentedMembers', function () {

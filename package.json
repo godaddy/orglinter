@@ -5,7 +5,9 @@
   "scripts": {
     "lint": "eslint .",
     "start": "./bin/cli.js",
-    "test": "nyc mocha"
+    "test:mocha": "mocha",
+    "test": "nyc npm run test:mocha",
+    "posttest": "npm run lint"
   },
   "repository": {
     "type": "git",
