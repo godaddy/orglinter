@@ -22,7 +22,7 @@ function findDemotions(configured, retrieved) {
 
 function findPromotions(configured, retrieved) {
   const promotions = Object.keys(configured).filter(
-    (member) => configured[member] === 'ADMIN' && retrieved[member].role === 'MEMBER'
+    (member) => configured[member] === 'ADMIN' && retrieved[member] && retrieved[member].role === 'MEMBER'
   );
   console.log(`${promotions.length} promotions found: `, promotions);
   return promotions;
