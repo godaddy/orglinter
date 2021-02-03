@@ -51,6 +51,14 @@ describe('Checkers', function () {
       );
       assume(result).eqls(['zaphod']);
     });
+
+    it('ignores users not in retrieved list', function () {
+      const result = checkers.findPromotions(
+        { zaphod: 'ADMIN', trillian: 'ADMIN', marvin: 'MEMBER', ford: 'MEMBER' },
+        { zaphod: { role: 'MEMBER' }, marvin: { role: 'MEMBER' }, ford: { role: 'MEMBER' } }
+      );
+      assume(result).eqls(['zaphod']);
+    });
   });
 
   describe('validateTwoFactor', function () {
