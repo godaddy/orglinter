@@ -28,6 +28,7 @@
     "assume": "^2.3.0",
     "eslint": "^7.15.0",
     "eslint-config-godaddy": "^4.0.1",
+    "eslint-plugin-jsdoc": "^31.6.1",
     "eslint-plugin-mocha": "^6.3.0",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^8.2.1",
