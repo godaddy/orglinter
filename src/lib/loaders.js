@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+'use strict';
+
 const fs = require('fs').promises;
 const { graphql } = require('@octokit/graphql');
 const TOML = require('@iarna/toml');

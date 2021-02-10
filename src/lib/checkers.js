@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+'use strict';
 
 function findUndocumentedMembers(configured, retrieved) {
   const undocumented = retrieved.filter(member => !configured.includes(member));

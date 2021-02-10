@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+'use strict';
+
 const { request } = require('@octokit/request');
 
 async function inviteUser({ username, organization, token, role = 'member', dryRun = false }) {
