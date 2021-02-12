@@ -4,7 +4,16 @@
 const fs = require('fs').promises;
 const { graphql } = require('@octokit/graphql');
 const TOML = require('@iarna/toml');
+const typedefs = require('./typedefs');
 
+
+/**
+ * Retrieve information from the GitHub GraphQL API about the requested org
+ *
+ * @param {string} orgName - The login name of the org to be retrieved
+ * @param {string} token - A personal access token for interacting with the API
+ * @returns {typedefs.OrgRecord} - The full details of the retrieved org
+ */
 async function retrieveOrgInfo(orgName, token) {
   let totalCount = 1, retrieved = 0, after = null, allMembers = [], pendingMembers, organization;
   const perPage = 100;
