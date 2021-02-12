@@ -2,6 +2,14 @@
 'use strict';
 
 /**
+ * A normalized member record retrieved from the GitHub GraphQL API
+ *
+ * @typedef {object} MemberRecord
+ * @property {string} role - The user's role in the org; "ADMIN" or "MEMBER"
+ * @property {boolean} hasTwoFactorEnabled - Whether the user has Two Factor Authentication enabled
+ */
+
+/**
  * Find users who currently belong to the organization, but not who are not
  * expected by config.
  *
@@ -34,7 +42,7 @@ function findNewMembers(configured, retrieved) {
  * to config.
  *
  * @param {object.<string, string>} configured - Configured usernames and their associated roles
- * @param {object.<string, object.<string, string>>} retrieved - User list retrieved from GitHub
+ * @param {object.<string, MemberRecord>} retrieved - User list retrieved from GitHub
  * @returns {string[]} An array of usernames who are admins, but should not be
  */
 function findDemotions(configured, retrieved) {
@@ -49,7 +57,7 @@ function findDemotions(configured, retrieved) {
  * Find users who are currently regular members of the org, but are configured as admins
  *
  * @param {object.<string, string>} configured - Configured usernames and their associated roles
- * @param {object.<string, object.<string, string>>} retrieved - User list retrieved from GitHub
+ * @param {object.<string, MemberRecord>} retrieved - User list retrieved from GitHub
  * @returns {string[]} An array of usernames who are not admins, but should be
  */
 function findPromotions(configured, retrieved) {
@@ -63,7 +71,7 @@ function findPromotions(configured, retrieved) {
 /**
  * Find org members who do not have two-factor authentication enabled
  *
- * @param {object.<string, object<string, boolean>>} members - User list retrieved from GitHub
+ * @param {object.<string, MemberRecord>} members - User list retrieved from GitHub
  * @returns {string[]} An array of usernames who are 2FA violators.
  */
 function validateTwoFactor(members) {
