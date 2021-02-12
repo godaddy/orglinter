@@ -100,6 +100,12 @@ async function retrieveOrgInfo(orgName, token) {
   return result;
 }
 
+/**
+ * Load an org's expected configuration from a TOML config file
+ *
+ * @param {string} fileName - The full path to the config file
+ * @returns {typedefs.ExpectedOrgConfig} - The full expected configuration of the org
+ */
 async function loadMembershipConfig(fileName) {
   const config = await TOML.parse.async(await fs.readFile(fileName));
   const allAdmins = new Set(
