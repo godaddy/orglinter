@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 /* eslint-disable no-console, no-process-env, max-statements */
+'use strict';
 
 require('dotenv').config();
 const path = require('path');

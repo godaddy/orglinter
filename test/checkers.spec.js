@@ -1,4 +1,6 @@
 /* eslint-disable no-console */
+'use strict';
+
 const assume = require('assume');
 const checkers = require('../src/lib/checkers');
 const sinon = require('sinon');
