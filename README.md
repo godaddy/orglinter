@@ -1,5 +1,12 @@
 # orglinter
 
+[![Version npm](https://img.shields.io/npm/v/orglinter.svg)](https://www.npmjs.com/package/orglinter)
+[![License](https://img.shields.io/npm/l/orglinter.svg)](https://github.com/godaddy/orglinter/blob/master/LICENSE)
+[![npm Downloads](https://img.shields.io/npm/dm/orglinter.svg)](https://npmcharts.com/compare/orglinter?minimal=true)
+[![Build Status](https://img.shields.io/github/workflow/status/godaddy/orglinter/Node.js%20CI)](https://github.com/godaddy/orglinter/actions?query=workflow%3A%22Node.js+CI%22)
+[![Codecov](https://img.shields.io/codecov/c/github/godaddy/orglinter)](https://codecov.io/gh/godaddy/orglinter)
+[![Dependencies](https://img.shields.io/david/godaddy/orglinter.svg)](https://github.com/godaddy/orglinter/blob/master/package.json)
+
 Lint GitHub organizations to ensure proper membership lists and configuration.
 
 ## Installation
