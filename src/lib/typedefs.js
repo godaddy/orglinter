@@ -15,6 +15,23 @@
  */
 
 /**
+ * A normalized application installation record retrieved from the GitHub REST API
+ *
+ * @typedef {object} AppRecord
+ * @property {number} appId - The global database identifier for the application
+ * @property {string} appSlug - A unique slug for identifying the application
+ * @property {string} repositorySelection - Whether this is installed for "all" or "selected" repositories
+ * @property {object.<string, string>} permissions - The set of permissions granted to this application
+ * @property {Array.<string>} events - A list of events that are received by this application
+ */
+
+/**
+ * A set of application installation records retrieved from the GitHub REST API
+ *
+ * @typedef {Array.<AppRecord>} AppSet
+ */
+
+/**
  * A normalized org record retrieved from the GitHub GraphQL API
  *
  * @typedef {object} OrgRecord
