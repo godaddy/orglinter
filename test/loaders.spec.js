@@ -23,7 +23,10 @@ describe('Loaders', function () {
 
     before(async function () {
       const response = JSON.parse(await fs.readFile(path.resolve(__dirname, 'responses/installations.json')));
-      scope = nock('https://api.github.com/').get('/orgs/foo/installations').reply(200, response).persist();
+      scope = nock(
+        'https://api.github.com/',
+        { reqheaders: { authorization: 'token 12345' } }
+      ).get('/orgs/foo/installations').reply(200, response).persist();
     });
 
     after(function () {
