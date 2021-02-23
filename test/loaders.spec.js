@@ -1,8 +1,10 @@
 'use strict';
 
 const assume = require('assume');
+const fs = require('fs').promises;
 const loaders = require('../src/lib/loaders');
 const nock = require('nock');
+const path = require('path');
 const sinon = require('sinon');
 
 
@@ -19,48 +21,9 @@ describe('Loaders', function () {
   describe('retrieveOrgApplications', function () {
     let scope;
 
-    before(function () {
-      scope = nock('https://api.github.com/').get('/orgs/foo/installations').reply(200, {
-        total_count: 2,
-        installations: [
-          {
-            id: 1,
-            account: {},
-            repository_selection: 'all',
-            access_tokens_url: 'https://foo/bar/tokens',
-            repositories_url: 'https://foo/bar/repos/',
-            html_url: 'https://foo/bar/html/',
-            app_id: 12,
-            app_slug: 'heart-of-gold',
-            target_id: 42,
-            target_type: 'Organization',
-            permissions: {
-              foo: 'read',
-              bar: 'write',
-              baz: 'read'
-            },
-            events: ['push', 'release']
-          },
-          {
-            id: 2,
-            account: {},
-            repository_selection: 'selected',
-            access_tokens_url: 'https://foo/bar/tokens',
-            repositories_url: 'https://foo/bar/repos/',
-            html_url: 'https://foo/bar/html/',
-            app_id: 13,
-            app_slug: 'infinite-improbability-drive',
-            target_id: 42,
-            target_type: 'Organization',
-            permissions: {
-              foo: 'write',
-              bar: 'read',
-              baz: 'write'
-            },
-            events: ['issue', 'discussion', 'pull_request']
-          }
-        ]
-      }).persist();
+    before(async function () {
+      const response = JSON.parse(await fs.readFile(path.resolve(__dirname, 'responses/installations.json')));
+      scope = nock('https://api.github.com/').get('/orgs/foo/installations').reply(200, response).persist();
     });
 
     after(function () {
