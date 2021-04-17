@@ -19,3 +19,16 @@ name = "Heart of Gold Crew"
 default_org_role = "ADMIN"
 privacy = "SECRET"
 members = ["mandroid", "tmcmillan", "zbeeblebrox"]
+
+[[applications]]
+appId = 42
+appSlug = "infinite-improbability-drive"
+repositorySelection = "selected"
+events = ["issues", "discussion", "pull_request"]
+
+[applications.permissions]
+# This applies to the application directly above, infinite-improbability-drive
+checks = "read"
+issues = "read"
+metadata = "read"
+deployments = "write"

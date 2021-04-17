@@ -124,6 +124,47 @@ does have the side effect that, if an internal username is connected to multiple
 GitHub usernames, as demonstrated above, all of those GitHub usernames will be
 made admins of the org.
 
+### [[applications]]
+
+Each `[[applications]]` section represents one org-level application
+installation. These entries are used to ensure that no applications get added to
+or removed from the org unexpectedly. You can also ensure that they only have
+the permissions you are expecting, and receive the events you are expecting.
+
+Similar to the `[[teams]]` above, applications are specified as an [array of
+tables]. In addition, the applications use a sub-table for the permissions,
+making a single application specification look like the following:
+
+```toml
+[[applications]]
+appId = 42
+appSlug = "infinite-improbability-drive"
+repositorySelection = "selected"
+events = ["issues", "discussion", "pull_request"]
+
+[applications.permissions]
+# This applies to the application directly above, infinite-improbability-drive
+checks = "read"
+issues = "read"
+metadata = "read"
+deployments = "write"
+```
+
+Given the flexibility of TOML, you can also specify the `permissions` table
+in-line, depending on your preference. That would look like this:
+
+```toml
+[[applications]]
+appId = 42
+appSlug = "infinite-improbability-drive"
+repositorySelection = "selected"
+events = ["issues", "discussion", "pull_request"]
+permissions = {checks = "read", issues = "read", metadata = "read", deployments = "write"}
+```
+
+Both of the above are wholly equivalent; it's simply a matter of preference
+which way you would like to specify them.
+
 ## Development
 
 ### Running Tests
