@@ -20,7 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "@octokit/graphql": "^4.5.8",
+    "@octokit/graphql": "^4.8.0",
     "@octokit/request": "^5.4.12",
     "dotenv": "^8.2.0"
   },
