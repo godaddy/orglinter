@@ -2,7 +2,6 @@
 
 /**
  * A normalized member record retrieved from the GitHub GraphQL API
- *
  * @typedef {object} MemberRecord
  * @property {string} role - The user's role in the org; "ADMIN" or "MEMBER"
  * @property {boolean} hasTwoFactorEnabled - Whether the user has Two Factor Authentication enabled
@@ -10,13 +9,11 @@
 
 /**
  * A set of member records retrieved from the GitHub GraphQL API
- *
  * @typedef {object.<string, MemberRecord>} MemberSet
  */
 
 /**
  * A normalized org record retrieved from the GitHub GraphQL API
- *
  * @typedef {object} OrgRecord
  * @property {string} email - The org's primary email address
  * @property {boolean} isVerified - Whether the org has been verified by GitHub
@@ -30,7 +27,6 @@
 
 /**
  * The expected configuration of a single GitHub team
- *
  * @typedef {object} ConfigTeam
  * @property {string} name - The display name of the team
  * @property {string} default_org_role - The org role assigned to members of this team; "ADMIN" or "MEMBER"
@@ -40,7 +36,6 @@
 
 /**
  * The expected configuration for the org entity itself
- *
  * @typedef {object} ConfigOrg
  * @property {string} email - The org's expected email address
  * @property {boolean} isVerified - Whether the org is expected to be verified by GitHub
@@ -53,7 +48,6 @@
 
 /**
  * Structured data representing the expected configuration of a GitHub org
- *
  * @typedef {object} ExpectedOrgConfig
  * @property {ConfigOrg} org - The expected configuration for the org entity itself
  * @property {object.<string, string | Array.<string>>} members - A set of "internal" usernames paired up with GitHub usernames

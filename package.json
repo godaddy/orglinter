@@ -20,20 +20,20 @@
   "license": "MIT",
   "dependencies": {
     "@iarna/toml": "^2.2.5",
-    "@octokit/graphql": "^4.5.8",
-    "@octokit/request": "^5.4.12",
-    "dotenv": "^8.2.0"
+    "@octokit/graphql": "^7.0.1",
+    "@octokit/request": "^8.1.1",
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "assume": "^2.3.0",
-    "eslint": "^7.15.0",
-    "eslint-config-godaddy": "^4.0.1",
-    "eslint-plugin-jsdoc": "^31.6.1",
-    "eslint-plugin-mocha": "^6.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-godaddy": "^7.0.2",
+    "eslint-plugin-jsdoc": "^46.4.6",
+    "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^8.2.1",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "sinon": "^9.2.4"
+    "sinon": "^15.2.0"
   },
   "bin": {
     "orglinter": "./bin/cli.js"
