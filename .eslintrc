@@ -3,7 +3,6 @@
   "extends": [
     "godaddy",
     "plugin:jsdoc/recommended",
-    "plugin:mocha/recommended",
     "plugin:node/recommended"
   ],
   "plugins": [

@@ -9,7 +9,6 @@ const typedefs = require('./typedefs');
 
 /**
  * Retrieve information from the GitHub GraphQL API about the requested org
- *
  * @param {string} orgName - The login name of the org to be retrieved
  * @param {string} token - A personal access token for interacting with the API
  * @returns {typedefs.OrgRecord} - The full details of the retrieved org
@@ -102,7 +101,6 @@ async function retrieveOrgInfo(orgName, token) {
 
 /**
  * Load an org's expected configuration from a TOML config file
- *
  * @param {string} fileName - The full path to the config file
  * @returns {typedefs.ExpectedOrgConfig} - The full expected configuration of the org
  */
