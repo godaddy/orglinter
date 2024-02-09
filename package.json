@@ -22,7 +22,7 @@
     "@iarna/toml": "^2.2.5",
     "@octokit/graphql": "^7.0.1",
     "@octokit/request": "^8.1.1",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.2"
   },
   "devDependencies": {
     "assume": "^2.3.0",
